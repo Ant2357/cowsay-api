@@ -16,6 +16,18 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 }
 ```
 
+#### options
+| args   | info                      |
+| ------ | :------------------------ |
+| text   | cowsay が喋るテキストです。 |
+| eyes   | cowsay の目です。          |
+| tongue | cowsay の舌です。          |
+
+#### example
+```sh
+https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U
+```
+
 ## Development
 ```
 npm install
