@@ -7,11 +7,13 @@ const app = new Hono<{ Bindings: CloudflareBindings }>()
 app.use('*', cors());
 
 app.get('/api/cowsay', (c) => {
-  const cowsayText = cowsay(c.req.query('text') ?? '');
+  const text = c.req.query('text') ?? '';
+  const eyes = c.req.query('eyes') ?? 'oo';
+  const tongue = c.req.query('tongue') ?? '';
   return c.json({
-    text: cowsayText
+    text: cowsay(text, eyes, tongue)
   });
-  // return c.text(cowsayText);
+  // return c.text(cowsay(text, eyes, tongue));
 });
 
 export default app;

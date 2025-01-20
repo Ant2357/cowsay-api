@@ -1,8 +1,10 @@
 // @ts-ignore
 const npmCowsay = require('cowsay');
 
-export const cowsay = (inputText: string) => {
+export const cowsay = (text: string, eyes: string, tongue: string) => {
   return npmCowsay.say({
-    text: inputText
+    text: text,
+    eyes: eyes,
+    tongue: tongue
   });
 };
