@@ -10,10 +10,20 @@ app.get('/api/cowsay', (c) => {
   const text = c.req.query('text') ?? '';
   const eyes = c.req.query('eyes') ?? 'oo';
   const tongue = c.req.query('tongue') ?? '';
+  const wrap = (() =>{
+    const query = c.req.query('wrap') ?? 'true';
+    const wrapStrValue = query.replaceAll(/\"|\'/g, "");
+    return wrapStrValue.toLowerCase() === 'true';
+  })();
+  const wrapLength = (() =>{
+    const inputWrapLength = c.req.query('wrapLength') ?? '40';
+    return Number.isNaN(parseInt(inputWrapLength)) ? 40 : parseInt(inputWrapLength);
+  })();
+
   return c.json({
-    text: cowsay(text, eyes, tongue)
+    text: cowsay(text, eyes, tongue, wrap, wrapLength)
   });
-  // return c.text(cowsay(text, eyes, tongue));
+  // return c.text(cowsay(text, eyes, tongue, wrap, wrapLength));
 });
 
 export default app;
