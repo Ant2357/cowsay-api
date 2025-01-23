@@ -18,7 +18,7 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 
 #### options
 | args       | type    | info                                                             |
-| ---------- | :-----  | :--------------------------------------------------------------- |
+| :--------- | :-----  | :--------------------------------------------------------------- |
 | text       | string  | cowsay が喋るテキストです。                                        |
 | eyes       | string  | cowsay の目です。                                                 |
 | tongue     | string  | cowsay の舌です。                                                 |
