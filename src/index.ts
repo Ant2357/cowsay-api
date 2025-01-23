@@ -11,7 +11,7 @@ app.get('/api/cowsay', (c) => {
   const eyes = c.req.query('eyes') ?? 'oo';
   const tongue = c.req.query('tongue') ?? '';
   const wrap = (() =>{
-    const query = c.req.query('wrap') ?? 'true';
+    const query = c.req.query('wrap') ?? 'false';
     const wrapStrValue = query.replaceAll(/\"|\'/g, "");
     return wrapStrValue.toLowerCase() === 'true';
   })();

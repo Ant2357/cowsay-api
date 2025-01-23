@@ -17,15 +17,17 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 ```
 
 #### options
-| args   | info                      |
-| ------ | :------------------------ |
-| text   | cowsay が喋るテキストです。 |
-| eyes   | cowsay の目です。          |
-| tongue | cowsay の舌です。          |
+| args       | type    | info                                                             |
+| ---------- | :-----  | :--------------------------------------------------------------- |
+| text       | string  | cowsay が喋るテキストです。                                        |
+| eyes       | string  | cowsay の目です。                                                 |
+| tongue     | string  | cowsay の舌です。                                                 |
+| wrap       | boolean | ワードラップ(自動改行)を無効化かするかどうか。 cowsay -n と同等です。 |
+| wrapLength | boolean | ふきだしの列幅です。 cowsay -W と同等です。                         |
 
 #### example
 ```sh
-https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U
+https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U&wrap=false&wrapLength=40
 ```
 
 ## Development
