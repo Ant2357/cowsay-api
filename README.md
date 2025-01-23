@@ -23,7 +23,7 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 | eyes       | string  | cowsay の目です。                                                 |
 | tongue     | string  | cowsay の舌です。                                                 |
 | wrap       | boolean | ワードラップ(自動改行)を無効化かするかどうか。 cowsay -n と同等です。 |
-| wrapLength | boolean | ふきだしの列幅です。 cowsay -W と同等です。                         |
+| wrapLength | number  | ふきだしの列幅です。 cowsay -W と同等です。                         |
 
 #### example
 ```sh
