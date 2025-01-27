@@ -7,10 +7,10 @@
   },
   "dependencies": {
     "cowsay": "^1.6.0",
-    "hono": "^4.6.17"
+    "hono": "^4.6.19"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250109.0",
-    "wrangler": "^3.103.2"
+    "@cloudflare/workers-types": "^4.20250124.3",
+    "wrangler": "^3.105.1"
   }
 }
