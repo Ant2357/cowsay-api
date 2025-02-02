@@ -32,7 +32,7 @@ app.get('/api/cat-me', (c) => {
   return c.json({
     text: catMe(catName) ?? "cat not found ฅ^•ω•^ฅ"
   });
-  // return c.text(catMe(catName));
+  // return c.text(catMe(catName) ?? "cat not found ฅ^•ω•^ฅ");
 });
 
 export default app;

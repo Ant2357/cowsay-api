@@ -12,7 +12,7 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 ### output
 ```json
 {
-  "text": "[cowsay の出力結果(長いので省略)]"
+  "text": "cowsay の出力結果(長いので省略)"
 }
 ```
 
@@ -29,6 +29,42 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 ```sh
 https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U&wrap=false&wrapLength=40
 ```
+
+---
+![cat-me の宣伝画面](cat-me-banner.png "cat-me の宣伝画面")
+
+### cat-me
+```sh
+https://cowsay-api.ant-npb.workers.dev/api/cat-me
+```
+
+### output
+```json
+{
+  "text": "猫AA(ランダム出力)"
+}
+```
+
+#### example
+```sh
+https://cowsay-api.ant-npb.workers.dev/api/cat-me?catName=nyan
+```
+
+#### options
+| args    | type    | info                  |
+| :------ | :-----  | :--------             |
+| catName | string  | 猫AA の指定を行います。 |
+
+#### Cats AA List
+* grumpy
+* approaching
+* tubby
+* confused
+* playful
+* thoughtful
+* delighted
+* nyan
+* resting
 
 ## Development
 ```
