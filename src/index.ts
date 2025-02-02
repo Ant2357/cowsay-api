@@ -29,7 +29,9 @@ app.get('/api/cowsay', (c) => {
 
 app.get('/api/cat-me', (c) => {
   const catName = c.req.query('catName') ?? '';
-  return c.json(catMe(catName));
+  return c.json({
+    text: catMe(catName)
+  });
   // return c.text(catMe(catName));
 });
 
