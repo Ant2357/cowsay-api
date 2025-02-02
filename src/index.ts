@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
 import { cowsay } from './features/cowsay/cowsay';
+import { catMe } from './features/cat-me/catMe';
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 app.use('*', cors());
@@ -24,6 +25,12 @@ app.get('/api/cowsay', (c) => {
     text: cowsay(text, eyes, tongue, wrap, wrapLength)
   });
   // return c.text(cowsay(text, eyes, tongue, wrap, wrapLength));
+});
+
+app.get('/api/cat-me', (c) => {
+  const catName = c.req.query('catName') ?? '';
+  return c.json(catMe(catName));
+  // return c.text(catMe(catName));
 });
 
 export default app;
