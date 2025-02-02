@@ -30,7 +30,7 @@ app.get('/api/cowsay', (c) => {
 app.get('/api/cat-me', (c) => {
   const catName = c.req.query('catName') ?? '';
   return c.json({
-    text: catMe(catName)
+    text: catMe(catName) ?? "cat not found ฅ^•ω•^ฅ"
   });
   // return c.text(catMe(catName));
 });
