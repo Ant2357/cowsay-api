@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 
-import { cowsay } from './features/cowsay/cowsay';
+import { cowsay, CowsayOptions } from './features/cowsay/cowsay';
 import { catMe } from './features/cat-me/catMe';
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
@@ -21,10 +21,17 @@ app.get('/api/cowsay', (c) => {
     return Number.isNaN(parseInt(inputWrapLength)) ? 40 : parseInt(inputWrapLength);
   })();
 
+  const cowsayOptions: CowsayOptions = {
+    text,
+    eyes,
+    tongue,
+    wrap,
+    wrapLength
+  };
   return c.json({
-    text: cowsay(text, eyes, tongue, wrap, wrapLength)
+    text: cowsay(cowsayOptions)
   });
-  // return c.text(cowsay(text, eyes, tongue, wrap, wrapLength));
+  // return c.text(cowsay(cowsayOptions));
 });
 
 app.get('/api/cat-me', (c) => {
