@@ -29,17 +29,20 @@ app.get('/api/cowsay', (c) => {
     wrapLength
   };
   return c.json({
-    text: cowsay(cowsayOptions)
+    text: cowsay(cowsayOptions),
+    arrayText: cowsay(cowsayOptions).split('\n')
   });
   // return c.text(cowsay(cowsayOptions));
 });
 
 app.get('/api/cat-me', (c) => {
   const catName = c.req.query('catName') ?? '';
+  const text = catMe(catName) ?? "cat not found ฅ^•ω•^ฅ";
   return c.json({
-    text: catMe(catName) ?? "cat not found ฅ^•ω•^ฅ"
+    text: text,
+    arrayText: text.split('\n')
   });
-  // return c.text(catMe(catName) ?? "cat not found ฅ^•ω•^ฅ");
+  // return c.text(text);
 });
 
 export default app;
