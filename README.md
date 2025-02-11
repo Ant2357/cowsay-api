@@ -34,10 +34,11 @@ https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge
 | tongue     | string  | cowsay の舌です。                                                 |
 | wrap       | boolean | ワードラップ(自動改行)を無効化かするかどうか。 cowsay -n と同等です。 |
 | wrapLength | number  | ふきだしの列幅です。 cowsay -W と同等です。                         |
+| mode       | string  | cowsay のモードです。 cowsay -b などの各種コマンドと同等です。       |
 
 #### example
 ```sh
-https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U&wrap=false&wrapLength=40
+https://cowsay-api.ant-npb.workers.dev/api/cowsay?text=hoge&eyes=oO&tongue=U&wrap=false&wrapLength=40&mode=b
 ```
 
 ---
