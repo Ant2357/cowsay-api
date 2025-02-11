@@ -20,13 +20,15 @@ app.get('/api/cowsay', (c) => {
     const inputWrapLength = c.req.query('wrapLength') ?? '40';
     return Number.isNaN(parseInt(inputWrapLength)) ? 40 : parseInt(inputWrapLength);
   })();
+  const mode = c.req.query('mode') ?? '';
 
   const cowsayOptions: CowsayOptions = {
     text,
     eyes,
     tongue,
     wrap,
-    wrapLength
+    wrapLength,
+    mode
   };
   return c.json({
     text: cowsay(cowsayOptions),

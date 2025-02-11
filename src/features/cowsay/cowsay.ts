@@ -7,6 +7,7 @@ export type CowsayOptions = {
   tongue: string;
   wrap: boolean;
   wrapLength: number;
+  mode: string;
 };
 
 export const cowsay = (cowsayOptions: CowsayOptions) => {
@@ -15,6 +16,7 @@ export const cowsay = (cowsayOptions: CowsayOptions) => {
     eyes: cowsayOptions.eyes,
     tongue: cowsayOptions.tongue,
     wrap: cowsayOptions.wrap,
-    wrapLength: cowsayOptions.wrapLength
+    wrapLength: cowsayOptions.wrapLength,
+    mode: cowsayOptions.mode
   });
 };
