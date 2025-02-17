@@ -3,6 +3,7 @@ import { cors } from 'hono/cors';
 
 import { cowsay, CowsayOptions } from './features/cowsay/cowsay';
 import { catMe } from './features/cat-me/catMe';
+import { figlet } from "./features/figlet/figlet";
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 app.use('*', cors());
@@ -45,6 +46,16 @@ app.get('/api/cat-me', (c) => {
     arrayText: text.split('\n')
   });
   // return c.text(text);
+});
+
+app.get('/api/figlet', (c) => {
+  const text = c.req.query('text') ?? '';
+  const figletText = figlet(text);
+  return c.json({
+    text: figletText,
+    arrText: figletText.split('\n')
+  });
+  // return c.text(figlet(text));
 });
 
 export default app;

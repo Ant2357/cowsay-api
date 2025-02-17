@@ -8,6 +8,7 @@
   "dependencies": {
     "cat-me": "^1.0.3",
     "cowsay": "^1.6.0",
+    "figlet": "^1.8.0",
     "hono": "^4.6.19"
   },
   "devDependencies": {
