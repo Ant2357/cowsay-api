@@ -8,6 +8,14 @@ import { figlet } from "./features/figlet/figlet";
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 app.use('*', cors());
 
+app.get('/', (c) => {
+  return c.json([
+    { title: 'cowsay', url: '/api/cowsay' },
+    { title: 'cat-me', url: '/api/cat-me' },
+    { title: 'figlet', url: '/api/figlet' }
+  ]);
+})
+
 app.get('/api/cowsay', (c) => {
   const text = c.req.query('text') ?? '';
   const eyes = c.req.query('eyes') ?? 'oo';
