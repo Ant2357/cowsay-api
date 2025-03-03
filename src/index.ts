@@ -12,6 +12,7 @@ app.get('/api/cowsay', (c) => {
   const text = c.req.query('text') ?? '';
   const eyes = c.req.query('eyes') ?? 'oo';
   const tongue = c.req.query('tongue') ?? '';
+
   const wrap = (() =>{
     const query = c.req.query('wrap') ?? 'false';
     const wrapStrValue = query.replaceAll(/\"|\'/g, "");
